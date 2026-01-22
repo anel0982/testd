@@ -131,7 +131,7 @@ body {
 }
 
 /* Scan lines effect */
-#Main-video-background::before {
+#Main-video-background::after {
   content: '';
   position: absolute;
   width: 100%;

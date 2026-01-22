@@ -111,12 +111,6 @@ body {
   overflow: hidden;
 }
 
-#myVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* Overlay làm tối video */
 #video-background::after {
   content: "";

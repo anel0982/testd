@@ -18,7 +18,7 @@ body {
   top: 50px; /* Adjust initial top position as needed */
   left: 50px; /* Adjust initial left position as needed */
   width: 600px; /* Fixed width */
-  height: 500px; /* Fixed height */
+  height: 400px; /* Fixed height */
   background-color: #1e1e1e; /* Terminal background color */
   color: #ffffff; /* Terminal text color */
   border-radius: 10px; /* Rounded corners */
@@ -96,7 +96,7 @@ body {
 #terminal-text {
   margin: 0;
   padding: 0;
-  font-size: 14px; /* Terminal text size */
+  font-size: 10px; /* Terminal text size */
   line-height: 1.5; /* Line height */
   overflow: hidden; /* Hide overflow */
   white-space: pre-line; /* Preserve line breaks */

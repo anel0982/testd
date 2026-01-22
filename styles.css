@@ -18,7 +18,7 @@ body {
   top: 50px; /* Adjust initial top position as needed */
   left: 50px; /* Adjust initial left position as needed */
   width: 600px; /* Fixed width */
-  height: 600px; /* Fixed height */
+  height: 500px; /* Fixed height */
   background-color: #1e1e1e; /* Terminal background color */
   color: #ffffff; /* Terminal text color */
   border-radius: 10px; /* Rounded corners */

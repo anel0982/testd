@@ -105,60 +105,32 @@ body {
   white-space: pre-line; /* Preserve line breaks */
 }
 
-/* Video background styles */
 #video-background {
-  position: fixed;
-  inset: 0;
-  z-index: 0; 
-  overflow: hidden;
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% of viewport width */
+  height: 100vh; /* 100% of viewport height */
+  z-index: -1; /* Behind other content */
 }
 
-
-/* Scanline – rất nhẹ */
+/* Scan lines effect */
 #video-background::before {
   content: '';
   position: absolute;
-  inset: 0;
-  display: none;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 2px);
   z-index: 1;
   pointer-events: none;
 }
 
-/* Dark overlay – nhẹ hơn */
-#video-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  display: none;
-  z-index: 2;
-  pointer-events: none;
-}
-/* Intro video background */
-#intro-background {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-#introVideo {
+/* Video styles */
+#Intro {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-#main-background {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  overflow: hidden;
-}
-
-/* Video main */
-#myVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Cover the entire viewport while maintaining aspect ratio */
+  z-index: 0; /* Behind other content */
 }
 
 

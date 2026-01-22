@@ -152,7 +152,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Cover the entire viewport while maintaining aspect ratio */
-  z-index: 0; /* Behind other content */
+  z-index: 1; /* Behind other content */
 }
 
 

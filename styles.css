@@ -244,6 +244,49 @@ body {
 .links a:hover {
   text-decoration: underline;
 }
+/* Discord Account styles */
+.discord-account {
+  margin-bottom: 20px;
+}
+
+.discord-account .discord-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.discord-account:hover .discord-box {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Discord avatar */
+.discord-account img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Discord text */
+.discord-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.discord-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.discord-tag {
+  font-size: 10px;
+  color: #b9bbbe; /* Discord gray */
+}
 
 /* User Description styles */
 .user-description {

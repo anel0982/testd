@@ -14,27 +14,18 @@ body {
 
 /* Terminal styles */
 #terminal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 75vw;        /* TO HƠN */
-  max-width: 1100px;  /* Giới hạn không quá to */
-  height: 70vh;       /* Cao hơn */
-
-  background-color: #1e1e1e;
-  color: #ffffff;
-  border-radius: 16px;
-
-  border: 2px solid #4d4d4d;
-  box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.15),
-    0 0 60px rgba(0, 0, 0, 0.8);
-
-  z-index: 1000;
+  position: fixed; /* Fixed position to keep it always visible */
+  top: 80px; /* Adjust initial top position as needed */
+  left: 80px; /* Adjust initial left position as needed */
+  width: 600px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  background-color: #1e1e1e; /* Terminal background color */
+  color: #ffffff; /* Terminal text color */
+  border-radius: 10px; /* Rounded corners */
+  z-index: 1000; /* Ensure it's above other elements */
+  border: 2px solid #4d4d4d; /* Terminal border color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Terminal shadow */
 }
-
 
 @media screen and (max-width: 600px) {
   /* Adjust styles for smaller screens, such as phones */

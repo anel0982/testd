@@ -189,7 +189,7 @@ body {
   border-radius: 20px; /* Rounded corners */
   border: 2px solid rgba(255, 255, 255, 0); /* Dark border with transparency */
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.5); /* Slightly blurred shadow */
-  backdrop-filter: blur(5px); /* Apply blur effect */
+  backdrop-filter: blur(10px); /* Apply blur effect */
   z-index: 999; /* Above other content */
   display: none; /* Initially hidden */
   padding: 20px; /* Add padding */

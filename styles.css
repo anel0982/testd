@@ -105,13 +105,28 @@ body {
 
 /* Video background styles */
 #video-background {
-  position: fixed; /* Fixed position to cover the entire viewport */
-  top: 0;
-  left: 0;
-  width: 100vw; /* 100% of viewport width */
-  height: 100vh; /* 100% of viewport height */
-  z-index: -1; /* Behind other content */
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
 }
+
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay làm tối video */
+#video-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
 
 /* Scan lines effect */
 #video-background::before {

@@ -28,8 +28,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Terminal shadow */
 }
 
-}
-
 @media screen and (max-width: 600px) {
   /* Adjust styles for smaller screens, such as phones */
   #terminal {

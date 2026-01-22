@@ -140,22 +140,19 @@ body {
   pointer-events: none;
 }
 /* Intro video background */
-#introVideo {
-  position: absolute;
+#intro-background {
+  position: fixed;
   inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#introVideo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
 
-/* Video styles */
-#myVideo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover the entire viewport while maintaining aspect ratio */
-  z-index: 0; /* Behind other content */
-}
 
 /* Positioning classes */
 .top-left {

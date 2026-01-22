@@ -185,15 +185,16 @@ body {
   transform: translate(-50%, -50%);
   width: 30%; /* Adjust width as needed */
   height: 70%; /* Adjust height as needed */
-  background-color: rgba(255, 255, 255, 0.25); /* Transparent background */
+  background-color: rgba(255, 255, 255, 0.15); /* Transparent background */
   border-radius: 20px; /* Rounded corners */
-  border: 2px solid rgba(255, 255, 255, 0.25); /* Dark border with transparency */
+  border: 2px solid rgba(255, 255, 255, 0.05); /* Dark border with transparency */
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.5); /* Slightly blurred shadow */
   backdrop-filter: blur(10px); /* Apply blur effect */
   z-index: 999; /* Above other content */
   display: none; /* Initially hidden */
   padding: 20px; /* Add padding */
-  text-align: center; /* Center text horizontally */
+  text-align: center; 
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);/* Center text horizontally */
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
@@ -254,13 +255,13 @@ body {
   align-items: center;
   gap: 12px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 5px;
   transition: background-color 0.3s;
 }
 
 .discord-account:hover .discord-box {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Discord avatar */
@@ -296,14 +297,14 @@ body {
 .user-description p {
   margin: 0; /* Remove default margin */
   padding: 10px; /* Add padding */
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
   border-radius: 5px; /* Rounded corners */
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
 
 /* User description hover effect */
 .user-description:hover p {
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background on hover */
+  background-color: rgba(255, 255, 255, 0.05); /* Semi-transparent background on hover */
 }
 
 #avatar-frame {

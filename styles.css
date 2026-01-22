@@ -15,8 +15,8 @@ body {
 /* Terminal styles */
 #terminal {
   position: fixed; /* Fixed position to keep it always visible */
-  top: 50px; /* Adjust initial top position as needed */
-  left: 50px; /* Adjust initial left position as needed */
+  top: 30px; /* Adjust initial top position as needed */
+  left: 30px; /* Adjust initial left position as needed */
   width: 600px; /* Fixed width */
   height: 400px; /* Fixed height */
   background-color: #1e1e1e; /* Terminal background color */

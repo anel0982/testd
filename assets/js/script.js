@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= ELEMENTS =================
     const terminal = document.getElementById("terminal");
     const terminalText = document.getElementById("terminal-text");
-const introVideo = document.getElementById("introVideo");
-const mainVideo = document.getElementById("mainVideo");
-
+    const video = document.getElementById("Main");
     const audio = document.getElementById("myAudio");
     const blurredBox = document.getElementById("blurred-box");
     const closeBtn = document.getElementById("close-button");
@@ -27,12 +25,7 @@ const mainVideo = document.getElementById("mainVideo");
     ];
 
     // ================= INITIAL STATE =================
-      introVideo?.pause();
-     mainVideo?.pause();
-
-     introVideo.style.display = "none";
-     mainVideo.style.display = "none";
-
+    video?.pause();
     audio?.pause();
     audio.volume = MAX_VOLUME;
     terminalText.style.textAlign = "center";
@@ -67,22 +60,17 @@ const mainVideo = document.getElementById("mainVideo");
     }
 
     // ================= INPUT =================
- function handleContinue() {
-    if (!finished) return;
+    function handleContinue() {
+        if (!finished) return;
 
-    terminal.style.display = "none";
-    blurredBox.style.display = "block";
+        terminal.style.display = "none";
+        blurredBox.style.display = "block";
 
-    introVideo.style.display = "block";
-    mainVideo.style.display = "none";
+        video?.play().catch(() => {});
+        audio?.play().catch(() => {});
 
-    introVideo.currentTime = 0;
-    introVideo.play().catch(() => {});
-
-    audio?.play().catch(() => {});
-
-    disableInput();
-}
+        disableInput();
+    }
 
     function onKey(e) {
         if (e.key === "Enter") handleContinue();
@@ -155,6 +143,3 @@ const mainVideo = document.getElementById("mainVideo");
         `;
     }
 });
-
-
-cho lấy video intro và video main

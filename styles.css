@@ -19,14 +19,13 @@ body {
   left: 30px; /* Adjust initial left position as needed */
   width: 500px; /* Fixed width */
   height: 400px; /* Fixed height */
-  background-color: #1e1e1e; /* Terminal background color */
+  background-color: rgba(30, 30, 30, 0.6); /* 🔥 đổi từ #1e1e1e */
+  backdrop-filter: blur(8px);              /* ✨ làm mờ nền phía sau */
   color: #ffffff; /* Terminal text color */
   border-radius: 10px; /* Rounded corners */
   z-index: 1000; /* Ensure it's above other elements */
   border: 2px solid #4d4d4d; /* Terminal border color */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Terminal shadow */
-  background-color: rgba(30, 30, 30, 0.6); /* 🔥 đổi từ #1e1e1e */
-  backdrop-filter: blur(8px);              /* ✨ làm mờ nền phía sau */
 }
 
 }

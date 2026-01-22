@@ -139,7 +139,15 @@ body {
   z-index: 2;
   pointer-events: none;
 }
-
+/* Intro video background */
+#introVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
 /* Video styles */
 #myVideo {

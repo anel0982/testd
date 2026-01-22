@@ -135,7 +135,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.25); /* 👈 GIẢM từ 0.45 */
+  display: none;
   z-index: 2;
   pointer-events: none;
 }

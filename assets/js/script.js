@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= SETTINGS =================
     const TYPE_SPEED = 40;
     const MAX_VOLUME = 0.1;
+    const ASCII_SPEED = 5;     // ASCII art (nhanh hơn)
+
 
     let index = 0;
     let finished = false;
@@ -31,28 +33,29 @@ document.addEventListener("DOMContentLoaded", () => {
     terminalText.style.textAlign = "center";
 
     // ================= TYPEWRITER =================
-    function typeLine(text, cb) {
-        let i = 0;
-        const interval = setInterval(() => {
-            terminalText.textContent += text[i++] || "";
-            if (i >= text.length) {
-                clearInterval(interval);
-                terminalText.textContent += "\n";
-                cb && cb();
-            }
-        }, TYPE_SPEED);
-    }
-
-    function startTyping() {
-        if (index === 0) {
-            typeLine(getAsciiArt(), next);
-        } else if (index <= lines.length) {
-            typeLine(lines[index - 1], next);
-        } else {
-            finished = true;
-            enableInput();
+  function typeLine(text, cb, speed = TYPE_SPEED) {
+    let i = 0;
+    const interval = setInterval(() => {
+        terminalText.textContent += text[i++] || "";
+        if (i >= text.length) {
+            clearInterval(interval);
+            terminalText.textContent += "\n";
+            cb && cb();
         }
+    }, speed);
+}
+
+
+   function startTyping() {
+    if (index === 0) {
+        typeLine(getAsciiArt(), next, ASCII_SPEED); // ⚡ ASCII nhanh
+    } else if (index <= lines.length) {
+        typeLine(lines[index - 1], next); // chữ thường
+    } else {
+        finished = true;
+        enableInput();
     }
+}
 
     function next() {
         index++;

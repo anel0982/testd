@@ -107,9 +107,10 @@ body {
 #video-background {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -5; 
   overflow: hidden;
 }
+
 
 /* Scanline – rất nhẹ */
 #video-background::before {

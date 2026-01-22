@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= ELEMENTS =================
     const terminal = document.getElementById("terminal");
     const terminalText = document.getElementById("terminal-text");
-    const video = document.getElementById("myVideo");
+
+    const introVideo = document.getElementById("introVideo");
+    const mainVideo = document.getElementById("mainVideo");
+
     const audio = document.getElementById("myAudio");
     const blurredBox = document.getElementById("blurred-box");
     const closeBtn = document.getElementById("close-button");
@@ -25,10 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // ================= INITIAL STATE =================
-    video?.pause();
-    audio?.pause();
-    audio.volume = MAX_VOLUME;
     terminalText.style.textAlign = "center";
+
+    // VIDEO STATE
+    introVideo.style.display = "block";
+    mainVideo.style.display = "none";
+
+    introVideo.muted = true;
+    mainVideo.muted = true;
+
+    introVideo.volume = 0;
+    mainVideo.volume = 0;
+
+    introVideo.loop = true;
+    mainVideo.loop = true;
+
+    introVideo.play().catch(() => {});
+
+    // AUDIO
+    audio?.pause();
+    if (audio) audio.volume = MAX_VOLUME;
 
     // ================= TYPEWRITER =================
     function typeLine(text, cb) {
@@ -59,19 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
         startTyping();
     }
 
-    // ================= INPUT =================
+    // ================= CONTINUE =================
     function handleContinue() {
         if (!finished) return;
 
         terminal.style.display = "none";
         blurredBox.style.display = "block";
 
-        video?.play().catch(() => {});
-        audio?.play().catch(() => {});
+        // SWITCH VIDEO
+        introVideo.pause();
+        introVideo.style.display = "none";
 
+        mainVideo.style.display = "block";
+        mainVideo.currentTime = 0;
+        mainVideo.play().catch(() => {});
+
+        audio?.play().catch(() => {});
         disableInput();
     }
 
+    // ================= INPUT =================
     function onKey(e) {
         if (e.key === "Enter") handleContinue();
     }
@@ -113,14 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= HELPERS =================
     function getOS() {
         const ua = navigator.userAgent;
-
         if (/Windows NT 10\.0/.test(ua)) return "Windows 10 / 11";
         if (/Windows NT 6\.3/.test(ua)) return "Windows 8.1";
         if (/Windows NT 6\.1/.test(ua)) return "Windows 7";
         if (/Android/.test(ua)) return "Android";
         if (/Mac OS X/.test(ua)) return "macOS";
         if (/iPhone|iPad/.test(ua)) return "iOS";
-
         return "Unknown";
     }
 

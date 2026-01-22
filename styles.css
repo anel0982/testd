@@ -153,6 +153,20 @@ body {
   object-fit: cover;
 }
 
+#main-background {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Video main */
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* Positioning classes */
 .top-left {

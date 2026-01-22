@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= ELEMENTS =================
     const terminal = document.getElementById("terminal");
     const terminalText = document.getElementById("terminal-text");
-
-    const introVideo = document.getElementById("introVideo");
-    const mainVideo = document.getElementById("mainVideo");
+const introVideo = document.getElementById("introVideo");
+const mainVideo = document.getElementById("mainVideo");
 
     const audio = document.getElementById("myAudio");
     const blurredBox = document.getElementById("blurred-box");
@@ -28,26 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     // ================= INITIAL STATE =================
-    terminalText.style.textAlign = "center";
+      introVideo?.pause();
+     mainVideo?.pause();
 
-    // VIDEO STATE
-    introVideo.style.display = "block";
-    mainVideo.style.display = "none";
+     introVideo.style.display = "none";
+     mainVideo.style.display = "none";
 
-    introVideo.muted = true;
-    mainVideo.muted = true;
-
-    introVideo.volume = 0;
-    mainVideo.volume = 0;
-
-    introVideo.loop = true;
-    mainVideo.loop = true;
-
-    introVideo.play().catch(() => {});
-
-    // AUDIO
     audio?.pause();
-    if (audio) audio.volume = MAX_VOLUME;
+    audio.volume = MAX_VOLUME;
+    terminalText.style.textAlign = "center";
 
     // ================= TYPEWRITER =================
     function typeLine(text, cb) {
@@ -78,26 +66,24 @@ document.addEventListener("DOMContentLoaded", () => {
         startTyping();
     }
 
-    // ================= CONTINUE =================
-    function handleContinue() {
-        if (!finished) return;
-
-        terminal.style.display = "none";
-        blurredBox.style.display = "block";
-
-        // SWITCH VIDEO
-        introVideo.pause();
-        introVideo.style.display = "none";
-
-        mainVideo.style.display = "block";
-        mainVideo.currentTime = 0;
-        mainVideo.play().catch(() => {});
-
-        audio?.play().catch(() => {});
-        disableInput();
-    }
-
     // ================= INPUT =================
+ function handleContinue() {
+    if (!finished) return;
+
+    terminal.style.display = "none";
+    blurredBox.style.display = "block";
+
+    introVideo.style.display = "block";
+    mainVideo.style.display = "none";
+
+    introVideo.currentTime = 0;
+    introVideo.play().catch(() => {});
+
+    audio?.play().catch(() => {});
+
+    disableInput();
+}
+
     function onKey(e) {
         if (e.key === "Enter") handleContinue();
     }
@@ -139,12 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // ================= HELPERS =================
     function getOS() {
         const ua = navigator.userAgent;
+
         if (/Windows NT 10\.0/.test(ua)) return "Windows 10 / 11";
         if (/Windows NT 6\.3/.test(ua)) return "Windows 8.1";
         if (/Windows NT 6\.1/.test(ua)) return "Windows 7";
         if (/Android/.test(ua)) return "Android";
         if (/Mac OS X/.test(ua)) return "macOS";
         if (/iPhone|iPad/.test(ua)) return "iOS";
+
         return "Unknown";
     }
 
@@ -167,3 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 });
+
+
+cho lấy video intro và video main

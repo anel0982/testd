@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const userId = "1359472071121309897"; // Replace with your hardcoded user ID
+    const userId = "1359472071121309897";
     const apiUrl = `https://discord-lookup-api-alpha.vercel.app/v1/user/${userId}`;
 
     // Elements
     const profilePicture = document.getElementById('profile-picture');
     const avatarFrame = document.getElementById('avatar-frame');
+    const discordName = document.getElementById('discord-name');
+    const discordTag = document.getElementById('discord-tag');
 
-    // Fetch user data from the API
     fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
@@ -15,23 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log("API Response:", data); // Debug: log the response
+            console.log("API Response:", data);
 
-            // Set profile picture
-            const avatarUrl = data.avatar ? data.avatar.link : './assets/pfp/default.jpg';
+            // Avatar
+            const avatarUrl = data.avatar?.link || './assets/pfp/default.jpg';
             profilePicture.src = avatarUrl;
 
-            // Set avatar frame if available
-            if (data.avatar_decoration && data.avatar_decoration.asset) {
-                const asset = data.avatar_decoration.asset;
-                const frameUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${asset}.png`;
-             // console.log("Avatar Frame URL:", frameUrl); // Debug: log frame URL
-                avatarFrame.src = frameUrl;
-                avatarFrame.style.display = 'block'; // Show the avatar frame
+            // Username
+            discordName.textContent = data.username || "Unknown User";
+
+            // Tag / Global name / ID
+            if (data.discriminator && data.discriminator !== "0") {
+                discordTag.textContent = `#${data.discriminator}`;
+            } else if (data.global_name) {
+                discordTag.textContent = data.global_name;
             } else {
-                console.warn("No avatar frame asset found.");
+                discordTag.textContent = `ID: ${data.id}`;
             }
 
+            // Avatar Frame
+            if (data.avatar_decoration?.asset) {
+                const frameUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${data.avatar_decoration.asset}.png`;
+                avatarFrame.src = frameUrl;
+                avatarFrame.style.display = 'block';
+            } else {
+                avatarFrame.style.display = 'none';
+            }
         })
         .catch(error => {
             console.error("Error fetching user data:", error);

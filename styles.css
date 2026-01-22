@@ -184,10 +184,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30%; /* Adjust width as needed */
-  height: 80%; /* Adjust height as needed */
-  background-color: rgba(255, 255, 255, 0); /* Transparent background */
+  height: 70%; /* Adjust height as needed */
+  background-color: rgba(255, 255, 255, 0.25); /* Transparent background */
   border-radius: 20px; /* Rounded corners */
-  border: 2px solid rgba(255, 255, 255, 0); /* Dark border with transparency */
+  border: 2px solid rgba(255, 255, 255, 0.25); /* Dark border with transparency */
   box-shadow: 0 0 10px rgba(100, 100, 100, 0.5); /* Slightly blurred shadow */
   backdrop-filter: blur(10px); /* Apply blur effect */
   z-index: 999; /* Above other content */
@@ -254,7 +254,7 @@ body {
   align-items: center;
   gap: 12px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   transition: background-color 0.3s;
 }
@@ -296,7 +296,7 @@ body {
 .user-description p {
   margin: 0; /* Remove default margin */
   padding: 10px; /* Add padding */
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
   border-radius: 5px; /* Rounded corners */
   transition: background-color 0.3s; /* Smooth transition for background color */
 }
